@@ -2,7 +2,3 @@
 	path = Source/Third_Party/spdlog
 	url = https://github.com/gabime/spdlog.git
 	ignore = dirty
-[submodule "Source/Third_Party/GLFW"]
-	path = Source/Third_Party/GLFW
-	url = https://github.com/glfw/glfw.git
-	ignore = dirty
