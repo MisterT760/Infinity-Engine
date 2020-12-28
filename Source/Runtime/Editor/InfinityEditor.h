@@ -8,8 +8,8 @@ public:
 	InfinityEditor();
 	~InfinityEditor();
 
+	//Functions for Initializing and Terminating the app
 	virtual void Initialize() override;
 	virtual void Terminate() override;
-
 };
 

@@ -1,6 +1,6 @@
 #include "InfinityEditor.h"
+#include "Core/Log.h"
 
-//
 InfinityEditor::InfinityEditor()
 {
 }
@@ -11,6 +11,7 @@ InfinityEditor::~InfinityEditor()
 
 void InfinityEditor::Initialize()
 {
+	INF_LOG_INFO("TEST");
 }
 
 void InfinityEditor::Terminate()

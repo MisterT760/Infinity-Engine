@@ -1,7 +1,7 @@
 #pragma once
 
 //
-#include "Core.h"
+#include "InfinityCore.h"
 
 namespace Infinity
 {
@@ -21,6 +21,9 @@ namespace Infinity
 		virtual void Initialize() = 0;
 		virtual void Terminate() = 0;
 
+	private:
+		//
+		InfinityCore m_Core;
 	};
 
 	//This function needs to be declared by the application

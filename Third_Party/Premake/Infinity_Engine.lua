@@ -1,4 +1,10 @@
---Solution name
+--Variables
+projectLocation = "..\\..\\Binaries\\%{os.get()}"
+buildPath = "..\\..\\Build\\"
+
+--[[
+  Solution
+]]
 workspace "Infinity_Engine"
   --Solution location and architecture
   location "..\\..\\"
@@ -29,15 +35,17 @@ workspace "Infinity_Engine"
   buildDir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
   dllDir = "Undefined"
 
-  --Engine project
+  --[[
+    Engine project
+  ]]
   project "Infinity_Engine"
-    location "..\\..\\Binaries\\Win64"
+    location(projectLocation)
     kind "SharedLib"
     language "C++"
 
     --Build paths
-    objdir("..\\..\\Build\\" .. buildDir .. "\\Intermediate")
-    targetdir("..\\..\\Build\\" .. buildDir)
+    objdir(buildPath .. buildDir .. "\\Intermediate")
+    targetdir(buildPath .. buildDir)
 
     --Files
     files
@@ -88,14 +96,17 @@ workspace "Infinity_Engine"
     filter "system:linux"
     filter "" --Remember to close the filter
 
+  --[[
+    Editor project
+  ]]
   project "Infinity_Editor"
-    location "..\\..\\Binaries\\Win64"
+    location(projectLocation)
     kind "ConsoleApp"
     language "C++"
 
     --Build paths
-    objdir("..\\..\\Build\\" .. buildDir .. "\\Intermediate")
-    targetdir("..\\..\\Build\\" .. buildDir)
+    objdir(buildPath .. buildDir .. "\\Intermediate")
+    targetdir(buildPath .. buildDir)
 
     --Files
     files
