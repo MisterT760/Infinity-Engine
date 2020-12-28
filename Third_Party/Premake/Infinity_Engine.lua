@@ -50,13 +50,30 @@ workspace "Infinity_Engine"
     includedirs
     {
       "..\\..\\Source\\Third_Party\\spdlog\\include",
+      "..\\..\\Source\\Third_Party\\GLFW\\include",
+    }
+
+    --Libraries
+    libdirs
+    {
+      "..\\..\\Source\\Third_Party\\GLFW\\libs\\vc2019"
+    }
+
+    links
+    {
+      "glfw3.lib"
+    }
+
+    ignoredefaultlibraries
+    {
+      "MSVCRT"
     }
 
     --Platform specifics
     filter "system:windows"
       --Basic windows setup
       cppdialect "C++17"
-      staticruntime "On"
+      staticruntime "Off"
       systemversion "latest"
 
       --Platform defines
@@ -87,12 +104,14 @@ workspace "Infinity_Engine"
       "..\\..\\Source\\Runtime\\Editor\\**.h",
     }
 
+    --Include directories
     includedirs
     {
       "..\\..\\Source\\Third_Party\\spdlog\\include",
-      "..\\..\\Source\\Runtime\\Engine"
+      "..\\..\\Source\\Runtime\\Engine",
     }
 
+    --Libraries
     links
     {
       "Infinity_Engine"
